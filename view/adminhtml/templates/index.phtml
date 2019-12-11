@@ -1,0 +1,47 @@
+
+<?php
+
+/** @var $block Mikielis\LogReader\Block\Index */
+$exceptions = $block->getExceptions();
+$system = $block->getSystem();
+$debug = $block->getDebug();
+
+?>
+
+<div class="log-logs">
+    <?php if (is_array($exceptions)): ?>
+        <h2><?= __('exception.log') ?></h2>
+        <div>
+            <?php foreach ($exceptions as $log): ?>
+                <div class="row">
+                    <div class="datetime"><?= $log->datetime ?></div>
+                    <div class="log"><?= $log->log ?></div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php endif ?>
+
+    <?php if (is_array($system)): ?>
+        <h2><?= __('system.log') ?></h2>
+        <div>
+            <?php foreach ($system as $log): ?>
+                <div class="row">
+                    <div class="datetime"><?= $log->datetime ?></div>
+                    <div class="log"><?= $log->log ?></div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php endif ?>
+
+    <?php if (is_array($debug)): ?>
+        <h2><?= __('debug.log') ?></h2>
+        <div>
+            <?php foreach ($debug as $log): ?>
+                <div class="row">
+                    <div class="datetime"><?= $log->datetime ?></div>
+                    <div class="log"><?= $log->log ?></div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php endif ?>
+</div>

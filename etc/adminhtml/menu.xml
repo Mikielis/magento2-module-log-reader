@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mikielis_LogReader::log_label"
+             title="Magento Logs"
+             translate="title"
+             module="Mikielis_LogReader"
+             sortOrder="80" parent="Magento_Backend::system"
+             dependsOnModule="Mikielis_LogReader"
+             dependsOnConfig="mikielis_logreader/functional/enable"
+             resource="Magento_Logging::logs"/>
+        <add id="Mikielis_LogReader::log_list"
+             title="List"
+             translate="title"
+             module="Mikielis_LogReader"
+             sortOrder="25"
+             parent="Mikielis_LogReader::log_label"
+             action="mikielis_logreader/index/"
+             resource="Magento_Logging::logs"/>
+    </menu>
+</config>

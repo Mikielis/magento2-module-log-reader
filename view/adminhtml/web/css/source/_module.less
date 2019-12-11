@@ -1,0 +1,37 @@
+
+.log-logs {
+  h2 {
+    background-color: @color-gray98;
+    border-top: 1px @color-gray85 solid;
+    border-bottom: 1px @color-gray85 solid;
+    padding: 10px 20px;
+    margin-top: 60px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  > div {
+    max-height: 300px;
+    overflow-y: scroll;
+    &:last-child {
+      border-bottom: 0;
+    }
+    .row {
+      border-bottom: 1px @color-gray85 solid;
+      > div {
+        float: left;
+        padding-bottom: 10px;
+        margin-top: 15px;
+        padding-left: 2%;
+        padding-right: 2%;
+      }
+      .datetime {
+        font-weight: bold;
+        width: 15%;
+      }
+      .log {
+        width: 83%;
+      }
+    }
+  }
+}
